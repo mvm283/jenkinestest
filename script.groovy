@@ -1,5 +1,6 @@
 def buildApp() {
-    echo 'building the application...'
+    echo 'git clone '
+    steps{ git url='https://github.com/mvm283/jenkinestest.git'}
 } 
 
 def testApp() {
