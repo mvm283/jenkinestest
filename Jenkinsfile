@@ -14,7 +14,7 @@ pipeline {
 	    
 	stage('Building our image test1') {
 	  steps{
-		bat 'docker build -t mohammadvee/spring-appp:'+'$BUILD_NUMBER'+'.'
+		bat 'docker build -t mohammadvee/spring-appp:latest .'
 		}
 	}
 	    
