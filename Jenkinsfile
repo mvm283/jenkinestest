@@ -17,7 +17,7 @@ pipeline {
                 bat "mvn -DskipTests=true clean compile package  -f pom.xml"
             }
         }
-        stage("build app") {
+        stage("build ducker") {
             steps {
                 bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 bat 'docker build -t mohammadvee/spring-app:latest .'
