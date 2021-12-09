@@ -15,13 +15,11 @@ pipeline {
             }
         }
         stage("clone git") {
-          
+           steps {
              git credentialsId: 'github_user', url: 'https://github.com/mvm283/starter_project_product_spring.git'
-             
-             
+           }            
         }
-        
-       stage("build") {
+        stage("build") {
             steps {
                 sh "mvn clean compile -f pom.xml"
             }
