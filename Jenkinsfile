@@ -9,12 +9,15 @@ pipeline {
 	registryCredential = 'dockerhub_id'
 	dockerImage = ''
 	}
+	
+    stages { 
+	    
 	stage('Building our image test1') {
 	  steps{
 		bat 'docker build -t mohammadvee/spring-appp:'+':$BUILD_NUMBER'+'.'
 		}
 	}
-    stages { 
+	    
         stage("clone git") {
            steps {
              git credentialsId: 'github_user', url: 'https://github.com/mvm283/starter_project_product_spring.git'
