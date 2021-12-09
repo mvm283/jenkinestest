@@ -18,7 +18,7 @@ pipeline {
         }
         stage("build") {
             steps {
-                bat "mvn clean compile package  -f pom.xml"
+                bat "mvn -DskipTests=true clean compile package  -f pom.xml"
             }
         }
         stage("test") {
