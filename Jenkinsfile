@@ -20,6 +20,10 @@ pipeline {
                     gv.cloneGit()
                 }
             }
+             git credentialsId: 'github_user', url: 'https://github.com/mvm283/starter_project_product_spring.git'
+             withMaven {
+              sh "mvn clean verify"
+            }
         }
         
        stage("build") {
