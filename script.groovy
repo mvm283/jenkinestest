@@ -1,6 +1,11 @@
 def buildApp() {
     echo 'git clone '
-    steps{ git url='https://github.com/mvm283/jenkinestest.git'}
+    git {
+          remote {
+            url('https://github.com/mvm283/jenkinestest.git')
+          }
+          branch('*/master')
+        } 
 } 
 
 def testApp() {
