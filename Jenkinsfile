@@ -14,7 +14,15 @@ pipeline {
                 }
             }
         }
-        stage("build") {
+        stage("clone git") {
+            steps {
+                script {
+                    gv.cloneGit()
+                }
+            }
+        }
+        
+       stage("build") {
             steps {
                 script {
                     gv.buildApp()
