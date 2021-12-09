@@ -1,5 +1,5 @@
 def buildApp() {
-    echo 'building the application...'
+    sh 'building the application...'
 } 
 
 def testApp() {
