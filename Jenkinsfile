@@ -21,7 +21,7 @@ pipeline {
         }
         stage("build") {
             steps {
-                bat "mvn clean compile  -f pom.xml"
+                bat "mvn clean package  -f pom.xml"
             }
         }
         stage("test") {
