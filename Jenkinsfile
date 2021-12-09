@@ -20,7 +20,7 @@ pipeline {
         stage("build app") {
             steps {
                 bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-                bat 'docker build -t mohammadvee/spring-app:latest .
+                bat 'docker build -t mohammadvee/spring-app:latest .'
                 bat 'docker push mohammadvee/spring-app:latest'
             }
         }
