@@ -1,6 +1,6 @@
 def buildApp() {
-    echo 'git clone '
-    git url: 'https://github.com/mvm283/jenkinestest.git'
+    echo 'buildApp '
+    mvn clean build
 } 
 
 def testApp() {
