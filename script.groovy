@@ -4,7 +4,7 @@ def gloneGit() {
 } 
 def buildApp() {
     echo 'buildApp '
-    sh 'mvn clean build'
+    bat 'mvn clean build'
 } 
 
 def testApp() {
