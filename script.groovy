@@ -1,6 +1,10 @@
+def gloneGit() {
+    echo 'clone git repository '
+    git credentialsId: 'github_user', url: 'https://github.com/mvm283/jenkinestest'
+} 
 def buildApp() {
     echo 'buildApp '
-    mvn clean build
+    sh 'mvn clean build'
 } 
 
 def testApp() {
