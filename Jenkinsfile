@@ -5,6 +5,9 @@ pipeline {
    
     environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-mohammade-cr')
+	    registry = "YourDockerhubAccount/YourRepository"
+	registryCredential = 'dockerhub_id'
+	dockerImage = ''
 	}
     stages { 
         stage("clone git") {
@@ -17,13 +20,13 @@ pipeline {
                 bat "mvn -DskipTests=true clean compile package  -f pom.xml"
             }
         }
-        stage("build ducker") {
-            steps {
-                bat 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-                bat 'docker build -t mohammadvee/spring-app:latest .'
-                bat 'docker push mohammadvee/spring-app:latest'
-            }
-        }
+       stage('Building our image') {
+	  steps{
+		script {
+		dockerImage = docker.build registry + ":$BUILD_NUMBER"
+		}
+	  }
+	}
         stage("test") {
             when {
                 expression {
