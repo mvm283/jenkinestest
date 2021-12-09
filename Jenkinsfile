@@ -22,10 +22,8 @@ pipeline {
         }
        stage('Building our image') {
 	  steps{
-		script {
-		dockerImage = docker.build registry + ":$BUILD_NUMBER"
+		bat 'docker build -t mohammadvee/spring-appp:'+':$BUILD_NUMBER'+'.'
 		}
-	  }
 	}
         stage("test") {
             when {
