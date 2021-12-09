@@ -1,6 +1,6 @@
 def gloneGit() {
     echo 'clone git repository '
-    git credentialsId: 'github_user', url: 'https://github.com/mvm283/jenkinestest'
+    git credentialsId: 'github_user', url: 'https://github.com/mvm283/starter_project_product_spring.git'
 } 
 def buildApp() {
     echo 'buildApp '
