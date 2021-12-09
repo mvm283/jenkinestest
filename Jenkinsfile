@@ -1,7 +1,6 @@
-def gv
-
+ 
 pipeline {
-    agent any
+   agent {label 'linux'}
    
     environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-mohammade-cr')
