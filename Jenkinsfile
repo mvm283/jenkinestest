@@ -4,7 +4,9 @@ pipeline{
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
-
+	 tools {
+            maven 'maven3.8.4'
+          }	
 	stages {
 	    
 	       stage("clone git") {
