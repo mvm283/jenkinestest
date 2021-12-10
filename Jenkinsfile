@@ -3,9 +3,7 @@ pipeline{
 	agent any
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
-		def dockerHome = tool 'dockerjen'
-		def mavenHome  = tool 'maven3.8.4'
-		env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
+
 	}
 	 tools {
             maven 'maven3.8.4'
