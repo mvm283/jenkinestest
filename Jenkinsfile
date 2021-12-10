@@ -16,7 +16,7 @@ pipeline{
 		}
 		stage("build app") {
 		    steps {
-			sh "mvn -X -DskipTests=true clean compile package  -f pom.xml"
+			sh "mvn -DskipTests=true clean compile package  -f pom.xml"
 		    }
 		}
 		stage('Build docker') {
