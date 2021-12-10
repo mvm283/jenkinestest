@@ -7,17 +7,10 @@ pipeline{
 	}
 	 tools {
             maven 'maven3.8.4'
+            dockerTool 'mydocker'
           }		
 	stages {
-	    
-	  stage('Initialize')
-		    {
-			    steps {
-				def dockerHome = tool 'mydocker'
-				def mavenHome  = tool 'maven3.8.4'
-				env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
-			    }
-		    }
+	 
 	       stage("clone git") {
 		   steps {
 		     sh 'docker --version'
